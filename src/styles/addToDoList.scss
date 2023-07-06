@@ -1,0 +1,44 @@
+@import './constants.scss';
+
+.addtoDo-container{
+    .add{
+        @include flexBox(flex-start,center,row,0,0);
+        
+        border-radius: 5px;
+        padding: 0.6rem;
+        gap: 1rem;
+        background-color: rgb(255, 255, 255);
+        input:nth-child(1){
+          transform: scale(1.4);
+          border-radius: 1rem;
+        }
+        input:nth-child(2){
+            width: 95%;
+            height: 2rem;
+            border: none;
+            &:focus{
+                outline: none;
+               };
+            font-size: $fontSize1;
+        }
+        button{
+            background-color: white;
+           border: none;
+           box-shadow:  0 0 0.1rem;
+           
+           padding: 0.4rem;
+           color: $color1;
+           font-weight: bold;
+           cursor: pointer;
+           &:hover{
+            background-color: $color1 ;
+            color:white;
+           }
+        }
+    }
+     .list{
+        @include flexBox(center,center,column,1rem,0);
+        padding: 1rem 0 1rem 0;
+        background-color: #f7f3f3;
+     }
+}

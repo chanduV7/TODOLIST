@@ -1,0 +1,59 @@
+@import './constants.scss';
+
+.navBarContainer{
+    @include flexBox(flex-start,flex-start,column,1.8rem,0);
+    padding: 2rem 0 0 0;
+    width: 100%;
+    div:nth-child(1){
+       padding-left: 2.4rem;
+        font-size: 1.6rem;
+        cursor: pointer;
+    };
+    div:nth-child(2){ 
+        width: 100%;
+        padding: 0.8rem ;
+          span:nth-child(1){
+            font-size: $fontSize1;
+            padding-left: 1.7rem;
+          }
+          span:nth-child(2){
+            padding-left: 1.7rem;
+           
+          }
+          &:hover{
+            background-color: #e9e8e7;
+            border-left: 3px solid $color1;
+        }
+    };
+    div:nth-child(3){
+        width: 100%;
+        padding: 0.8rem ;
+        span:nth-child(1){
+            padding-left: 1.7rem;
+          font-size: $fontSize1;
+        }
+        span:nth-child(2){
+          padding-left: 1.7rem;
+        }
+        &:hover{
+            background-color: #e9e8e7;
+            border-left: 3px solid $color1;
+        }
+  }
+  div:nth-child(4){
+    width: 100%;
+    padding: 0.8rem ;
+    span:nth-child(1){
+      font-size: $fontSize;
+      padding-left: 1.9rem;
+    }
+    span:nth-child(2){
+      padding-left: 1.7rem;
+    }
+    &:hover{
+        background-color: #e9e8e7;
+        border-left: 3px solid $color1;
+    }
+}
+    
+}

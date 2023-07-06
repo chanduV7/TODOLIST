@@ -1,0 +1,63 @@
+@import './constants.scss';
+
+.header{
+  
+   background-color: #2564cf;
+   color: $color2;
+   button{
+    font-size: $fontSize1;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0.7rem;
+    cursor: pointer;
+    &:hover{
+        background-color: #1a3889;
+    }
+   }
+.header-container{
+  
+    font-size: $fontSize1;
+    @include flexBox(space-between,center,row,0,0);
+    @include template;
+    .header-part1{
+        @include flexBox(center,center,row,0,2rem);
+        div::nth-child(2){
+            padding-bottom: 0.7rem;
+        }
+    }
+    .header-part2{
+        @include flexBox(center,center,row,0,1.2rem);
+        @include borderDetails(2px,solid,rgb(255, 255, 255),0.4rem);
+        width: 25rem;
+        height: 2.3rem;
+        background-color: $color2;
+        input{
+            font-size: $fontSize;
+           width: 20rem;
+           height: 1.9rem;
+           @include borderDetails(0px,solid,#302f2f,0);
+           background-color: transparent;
+           &:focus{
+            outline: none;
+           }
+        }
+        div:nth-child(2) button{
+           color: $color1;
+           padding: 0;
+           &:hover{
+            background-color: $color2;
+           }
+        }
+        &:hover{
+            transform: scale(1.01);
+        }
+    }
+    .header-part3{
+        @include flexBox(center,center,row,0,0)
+    }
+}
+}
+
+
+

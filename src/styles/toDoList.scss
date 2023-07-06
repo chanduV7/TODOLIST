@@ -1,0 +1,83 @@
+@import "./constants.scss";
+.toDoListContainer{
+    position: relative;
+.myDay-container{
+    @include template;
+    height: 43.8rem;
+    background-color: #faf9f7;
+    @include flexBox(flex-start,flex-start,row,0,0);
+    .sideBar{
+        width: 20%;
+        height: 100%;
+        font-size: $fontSize;
+        @include flexBox(start,start,column,0,0);  
+        background-color: white;
+    }
+    .myDay{
+        width: 80%;
+        height: 100%;
+        padding: 1.5rem 0.1rem 2rem 0.1rem;
+        button{
+            font-size: $fontSize2;
+            border: none;
+            background: transparent;
+            padding: 0.2rem;
+            cursor: pointer;
+            &:hover{
+                background-color: #ffffff;
+            }
+        }
+        @include flexBox(space-between,start,row,0,0);
+        .myDayPart1{
+            @include flexBox(center,flex-start,row,0,0.5rem);
+            .title{
+                font-size: $fontSize1;
+                font-weight: 600;
+            }
+            .date{
+                font-size: 0.75rem;
+            }
+        }
+        .myDayPart2{
+            @include flexBox(center,center,row,0,0.5rem);
+            cursor: pointer;
+            padding-right: 6rem;
+            &:hover{
+                background-color: #ffffff;
+            }
+        }
+    }
+}
+
+    .sortList{
+        background-color: white;
+        padding: 0.5rem;
+        position: absolute;
+        top: 9%;
+        left: 88.8%;
+        z-index: 100;
+        box-shadow: 0 0 0.9rem #f7f3f3;
+        @include flexBox(start,start,column,1rem,0);
+        .sort-link{
+            @include flexBox(flex-start,center,row,0,00.5rem);
+            &:hover{
+                background-color: #f7f3f3;
+                cursor: pointer;
+                padding: 0.1rem;
+            }
+        }
+        div:nth-child(1){
+           font-weight: 500;
+           
+        }
+    }
+
+    .addToDo{
+        width:75% ;
+        position: absolute;
+        top: 20%;
+        left: 22%;
+        background-color: #faf9f7;
+       
+    }
+}

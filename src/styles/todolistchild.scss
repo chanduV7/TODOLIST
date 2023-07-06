@@ -1,0 +1,25 @@
+@import './constants.scss';
+
+.child{
+    @include flexBox(space-between,flex-start,row,0,0);
+   
+    width: 99.5%;
+    border-radius: 5px;
+    padding: 0.5rem;
+    box-shadow: 0 0 0.1rem;
+    font-size: $fontSize1;
+    background-color: white;
+    div:nth-child(1){
+        @include flexBox(center,center,row,0,1rem);
+       input{
+        transform: scale(1.4);
+        border-radius: 1rem;
+       }
+    }
+    div:nth-child(2){
+         span{
+            cursor: pointer;
+            padding: 0.2rem;
+         }
+    }
+}

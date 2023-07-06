@@ -1,0 +1,28 @@
+$fontSize1 : 1.3rem;
+$fontSize2 : 1.4rem;
+$fontSize : 1rem;
+$color1 : #2564cf;
+$color2 : white;
+@mixin template{
+    max-width: 100vw;
+    margin: 0 auto;
+}
+
+@mixin flexBox($justify,$align,$dir,$rowGp,$colGp){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dir;
+    row-gap: $rowGp;
+    column-gap : $colGp;
+}
+
+@mixin borderDetails($thickness,$borderType,$colour,$br){
+    border: $thickness $borderType $colour;
+    border-radius: $br;
+}
+
+@mixin padd($up,$right,$bottom,$left){
+    padding: $up, $right, $bottom, $left;
+}
+

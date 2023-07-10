@@ -2,11 +2,15 @@ import { useRef, useState } from "react";
 import { v4 as uuid} from 'uuid';
 import "../styles/addToDoList.scss";
 import Child from "./todolistchild";
+import axios from "axios";
+import { useEffect } from "react";
+import DataList from "./renderList";
 export default function AddToDo(){
     const inputRef =useRef(null);
     const [edit, setEdit] = useState(false);
     const [editTodo, setEditToDo] = useState(null);
     const [todos, setTodos] = useState([]);
+    const [list , setList] = useState([])
     const updateList = (action, arg) =>{
         switch (action) {
             case "edit":
@@ -38,10 +42,35 @@ export default function AddToDo(){
               title: inputRef.current.value,
             },
           ]);
+          
         }
       };
 
-
+      const fetchList = async() => {
+        const baseUrl = "https://students.codex.today/";
+        const token = localStorage.getItem("token");
+        try {
+           const response = await axios.get(
+            `${baseUrl}todo/todo`
+            ,
+            {
+               headers:{
+                "Content-Type" : "application/json",
+               "Authorization" : `Bearer ${token}`
+               }
+              }
+           );
+           console.log(response);
+           setList(response.data);
+          console.log(list)
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    useEffect(() => {
+        fetchList()
+        console.log(list)
+    },[])
     return(
         <div className="addtoDo-container">
              <div className="add">
@@ -50,6 +79,10 @@ export default function AddToDo(){
                  <button onClick={handleClick}>{edit ? "EDIT" : "ADD"}</button>
              </div>
              <div className="list">
+              {
+                list.map(e =>  e.title &&  <DataList updateList={updateList} todo={e} key={e._id}/>
+                )
+              }
              {todos.map((e) => (
                     <Child updateList={updateList} todo={e} key={uuid()}/>
                ))}

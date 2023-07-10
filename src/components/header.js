@@ -2,9 +2,17 @@ import {TbCategory, TbSearch} from 'react-icons/tb';
 import {FiSettings} from 'react-icons/fi';
 import {BsQuestionLg} from 'react-icons/bs';
 import {AiOutlineNotification} from 'react-icons/ai';
+import {BiLogOut} from 'react-icons/bi';
 import {CgProfile} from 'react-icons/cg';
 import "../styles/header.scss";
+import { useNavigate } from 'react-router-dom';
 export default function Header(){
+    const navigate = useNavigate()
+    function logOut(){
+        localStorage.clear();
+        navigate("/login");
+    }
+    
     return(
         <div className='header'>
            <div className='header-container'>
@@ -23,6 +31,7 @@ export default function Header(){
                 <div><button><BsQuestionLg/></button></div>
                 <div><button><AiOutlineNotification/></button></div>
                 <div><button><CgProfile/></button></div>
+                <div><button onClick={()=> logOut()}><BiLogOut/></button></div>
             </div>
           </div>  
         </div> 

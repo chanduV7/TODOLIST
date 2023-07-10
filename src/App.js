@@ -11,12 +11,9 @@ function App() {
   const router = createBrowserRouter([
     {
       path:"/",
-      element: <div>Start Page</div>
+      element: <RegisterPage/>
     },
-    {
-      path:"/signup",
-      element : <RegisterPage/>
-    },
+    
     {
       path:"/login",
       element : <LoginPage/>
@@ -24,8 +21,8 @@ function App() {
     {
       path:"/home",
       element: <div>
-                 <Header/>
-                 <ToDoList/>
+                  <Header/>
+                  <ToDoList/>
                </div>
     },
     {
@@ -38,7 +35,7 @@ function App() {
   ])
   return (
     <div className="App">
-       <RouterProvider router={router}/>
+           <RouterProvider router={router}/>
     </div>
   );
 }

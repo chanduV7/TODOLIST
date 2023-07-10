@@ -21,8 +21,6 @@ export default function ToDoList() {
     year: date.getFullYear(),
     date: date.getDate()
    }
-   console.log(dateObj);
-   
     return(
         <div className='toDoListContainer'>
             <div className='myDay-container'>

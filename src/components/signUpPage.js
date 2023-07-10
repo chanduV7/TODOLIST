@@ -22,8 +22,7 @@ export default function RegisterPage(){
             body: JSON.stringify(formData)
         }) 
         const resout = await res.json();
-        console.log(resout);
-       
+        console.log(resout);   
        } catch (error) {
         console.log(error)
        }

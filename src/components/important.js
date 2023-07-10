@@ -14,7 +14,7 @@ export default function Important(){
     const handleClick = () =>{
         setToggle(!toggle);
     }
-   
+
     return(
         <div className='toDoListContainer'>   
              <div className='myDay-container'>
@@ -61,7 +61,7 @@ export default function Important(){
          <></>
            }
          <div className='addToDo'>
-                <AddToDo/>
+                {/* <AddToDo/> */}
          </div>
         </div>
     )

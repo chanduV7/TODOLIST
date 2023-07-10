@@ -6,7 +6,7 @@ export default function LoginPage(){
     const navigate = useNavigate();  
     const token = localStorage.getItem("token");
     const baseUrl = "https://students.codex.today/";
-   
+    
     const login = async(e) => {
        try {
         e.preventDefault()
@@ -28,15 +28,17 @@ export default function LoginPage(){
         const keys = Object.keys(resout)
         keys.forEach((e) => localStorage.setItem(e,resout[e]))
         console.log(token)
-        if(token){
+        if(resout.userId === localStorage.getItem("userId")){
             navigate("/home");
-            alert("token")
+            // alert("token")
         }
        } catch (error) {
         console.log(error)
        }
     }
-   
+   function navigatetoSignup(){
+    navigate("/")
+   }
   
     return(
         <div className="signUpPage">
@@ -51,6 +53,7 @@ export default function LoginPage(){
                      <input type="text" placeholder="Email address" name="email"/>
                      <input  type="password" placeholder="Password" name="password"/>
                      <button type="submit" onClick={login}>Login</button> 
+                     <span className="btn" onClick={() => navigatetoSignup()}>Didn't Signup? Click Me</span>
                  </form>
                 </div>
             </div>

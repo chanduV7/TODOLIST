@@ -40,5 +40,11 @@
         @include flexBox(center,center,column,1rem,0);
         padding: 1rem 0 1rem 0;
         background-color: #f7f3f3;
+        overflow: scroll;
+        height: 29rem;
+        padding-top: 10rem;
+     }
+     .list::-webkit-scrollbar{
+        display: none;
      }
 }

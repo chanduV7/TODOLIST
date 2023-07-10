@@ -21,9 +21,9 @@ export default function Header(){
                 <div>To Do</div>
             </div>
             <div className='header-part2 '>
-                <div><input type="text"/></div>
+                <div><input clas type="text"/></div>
                 <div>
-                  <button> <TbSearch/></button> 
+                  <button > <TbSearch/></button> 
                 </div>
             </div>
             <div className='header-part3'>

@@ -27,7 +27,7 @@ export default function LoginPage(){
         console.log(resout);
         const keys = Object.keys(resout)
         keys.forEach((e) => localStorage.setItem(e,resout[e]))
-        console.log(token)
+        
         if(resout.userId === localStorage.getItem("userId")){
             navigate("/home");
             // alert("token")

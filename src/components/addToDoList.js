@@ -62,14 +62,13 @@ export default function AddToDo(){
            );
            console.log(response);
            setList(response.data);
-          console.log(list)
         } catch (error) {
           console.log(error);
         }
       }
     useEffect(() => {
         fetchList()
-        console.log(list)
+      
     },[])
     return(
         <div className="addtoDo-container">
@@ -80,7 +79,7 @@ export default function AddToDo(){
              </div>
              <div className="list">
               {
-                list.map(e =>  e.title &&  <DataList updateList={updateList} todo={e} key={e._id}/>
+                list.map(e => e.title !== "fwgfwfwe" && e.title &&  <DataList updateList={updateList} todo={e} key={e._id}/>
                 )
               }
              {todos.map((e) => (

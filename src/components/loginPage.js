@@ -53,7 +53,7 @@ export default function LoginPage(){
                      <input type="text" placeholder="Email address" name="email"/>
                      <input  type="password" placeholder="Password" name="password"/>
                      <button type="submit" onClick={login}>Login</button> 
-                     <span className="btn" onClick={() => navigatetoSignup()}>Didn't Signup? Click Me</span>
+                     <span  className="btn" onClick={() => navigatetoSignup()}>Didn't Signup? Click Me</span>
                  </form>
                 </div>
             </div>

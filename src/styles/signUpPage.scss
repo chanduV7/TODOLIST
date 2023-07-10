@@ -48,6 +48,11 @@
             }
             .btn{
                 cursor: pointer;
+                &:hover{
+                    background-color: white;
+                    color: $color1;
+                }
+                font-weight: 600 ;
             }
         }
     }
